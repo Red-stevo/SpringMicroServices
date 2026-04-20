@@ -29,7 +29,7 @@ public class VehicleOrderController {
         return ResponseEntity.ok(orderService.getAllVehicleOrderDetails());
     }
 
-    @GetMapping("id")
+    @GetMapping("{id}")
     public ResponseEntity<VehicleOrderModel> getVehicleOrderModel(@PathVariable("id") String orderId) {
         return ResponseEntity.ok(orderService.getVehicleOrderDetails(orderId));
     }

@@ -6,17 +6,19 @@ import com.red.stevo.vehicleorderservice.request.VehicleOrderRequest;
 import com.red.stevo.vehicleorderservice.response.VehicleInventoryModel;
 import com.red.stevo.vehicleorderservice.response.VehicleOrderModel;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mappings;
+import org.mapstruct.Mapping;
+
+import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface VehicleOrderMapper {
 
     VehicleOrderEntity mapVehicleOrderRequestToVehicleOrderEntity(VehicleOrderRequest orderRequest);
 
-    @Mappings({
 
-    })
+    @Mapping(source = "orderEntity.id", target = "id")
     VehicleOrderModel mapVehicleOrderEntityAndVehicleInventoryModelToVehicleOrderModel(
             VehicleOrderEntity orderEntity, VehicleInventoryModel inventoryModel);
+
 
 }
